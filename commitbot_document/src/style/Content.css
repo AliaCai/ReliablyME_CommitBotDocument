@@ -1,0 +1,39 @@
+.content{
+    flex:1;
+    padding:3vh;
+
+}
+.content >div{
+    margin-bottom: 2vh;
+}
+.content_title{
+    font-size:2rem;
+    font-weight: 800;
+    padding-bottom: 1vh;
+}
+
+.heavy{
+    font-weight: 700;
+} 
+.highlight{
+    background-color: rgb(255, 255, 169);
+}
+
+.content img{
+    padding: 2vh 0;
+    display: block;
+    width:40vw;
+    margin: 0 auto;
+}
+
+.cotent_list >li{
+    padding:1vh;
+}
+
+.cotent_list_plain >li{
+    padding:0.7vh 0
+}
+
+.content_commands_table{
+    padding: 2vh 0;
+}

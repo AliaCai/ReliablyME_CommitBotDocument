@@ -1,0 +1,29 @@
+.leftNav{
+
+    position:sticky;
+    top:7vh;
+    padding:2vh;
+    width:15vw;
+    height:90vh;
+    border-right: 1px solid rgb(213, 210, 210);
+}
+
+.leftNav a{
+    text-decoration: none;
+      color: inherit;
+}
+
+.leftNav div{
+    padding: 1vh;
+    font-weight: 700;
+}
+
+.leftNav div:hover{
+    background-color: rgb(238, 235, 235);
+    border-radius: 7px;
+}
+
+.color{
+     background-color: rgb(238, 235, 235);
+       border-radius: 7px;
+}

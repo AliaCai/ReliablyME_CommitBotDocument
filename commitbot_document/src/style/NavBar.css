@@ -1,0 +1,27 @@
+.navBar{
+    position:sticky;
+    top:0;
+    height:5vh;
+    width: 100vw;
+    padding:1vh;
+    background-color: rgb(238, 235, 235);
+    display: flex;
+
+}
+.navBar_logo{
+    height:100%;
+
+
+}
+.navBar_logoImg{
+    height: 100%;
+
+
+    object-fit: contain;
+
+}
+
+.leftNav a{
+    text-decoration: none;
+      color: inherit;
+}
