@@ -7,9 +7,39 @@
     background-color: rgb(238, 235, 235);
     display: flex;
     justify-content: space-between;
+    z-index: 1;
 
 }
-.navBar_logo{
+
+.navBar img{
+    height:5vh;
+    object-fit: contain;
+}
+
+.gpt{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.gpt_describe{
+    width:7vw;
+    font-size: small;
+    background-color: rgb(214, 212, 212);
+    font-weight: 600;
+    border-radius: 6%;
+    padding: 0.5rem;
+    margin-top: 0.1rem;
+    visibility:hidden;
+
+
+}
+.gpt_logoImg{
+      padding:5%;
+    background-color: white;
+    border-radius: 50%;
+}
+
+/* .navBar_logo{
     height:100%;
 }
 .navBar_logoImg{
@@ -30,13 +60,16 @@
     border-radius: 50%;
     object-fit: contain;
 
-}
-
+} */
 
 .gpt_logoImg:hover{
     box-shadow: 0 0 0.5em white;
     animation-name: spin;
     animation-duration: 2s;
+}
+
+.gpt_link:hover +.gpt_describe{
+    visibility:visible;
 }
 
 .leftNav a{
