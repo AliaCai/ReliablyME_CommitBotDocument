@@ -4,7 +4,7 @@
 
 }
 .content >div{
-    margin-bottom: 2vh;
+    margin-bottom: 5vh;
 }
 .content_title{
     font-size:2rem;
@@ -26,6 +26,12 @@
     margin: 0 auto;
 }
 
+
+
+.content_faq_display{
+
+    padding-left: 2vw;
+}
 .cotent_list >li{
     padding:1vh;
 }
@@ -37,3 +43,4 @@
 .content_commands_table{
     padding: 2vh 0;
 }
+

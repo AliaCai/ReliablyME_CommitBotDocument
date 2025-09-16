@@ -1,4 +1,5 @@
-import React from 'react'
+import React, {useState} from 'react'
+
 import '../style/Content.css'
 
 import Accordion from '@mui/material/Accordion';
@@ -14,7 +15,8 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Switch from '@mui/material/Switch';
 
 import sec1_img1 from "../asset/sec1_img1.png"
 import sec1_img2 from "../asset/sec1_img2.png"
@@ -43,6 +45,21 @@ import sec7_img1 from "../asset/sec7_img1.png"
 import sec8_img1 from "../asset/sec8_img1.png"
 import sec8_img2 from "../asset/sec8_img2.png"
 const Content = () => {
+    const [expand, setExpand]=useState(true);
+    const [accordion, setAccordion]=useState({ faq0:true,faq1:true, faq2:true, faq3:true, faq4:true, faq5:true, faq6:true, faq7:true})
+    const handelClick=()=>{
+        setExpand(!expand)
+        if (!expand){
+            setAccordion({ faq0:true,faq1:true, faq2:true, faq3:true, faq4:true, faq5:true, faq6:true, faq7:true})
+        }else{
+            setAccordion({ faq0:false,faq1:false, faq2:false, faq3:false, faq4:false, faq5:false, faq6:false, faq7:false})
+        }
+        console.log('hellu',expand)
+    }
+    const accordionAction=(faq)=>{
+          return setAccordion((prev)=>({...prev,[faq]:!prev[faq]}))
+        console.log('hellu',accordion)
+    }
     const rows=[
         {name:"/login",description:'Link your Slack and ReliablyME accounts'},
      {name:"/register",description:'Register a ReliablyME account'},
@@ -315,10 +332,12 @@ const Content = () => {
             </div>
         </div > 
         < div id='faq' className='content_faq'>
-            <div className='content_title'>Frequently Asked Questions (FAQ)</div>
+            <div className='content_title'>Frequently Asked Questions (FAQ) <FormControlLabel control={<Switch checked={expand} onChange={handelClick} defaultChecked />} className='content_faq_display' label="Expand" />
+</div>
+
             <div className="content_content">
 
-                <Accordion>
+                <Accordion expanded={accordion.faq0} onChange={()=>accordionAction('faq0')}>
                     <AccordionSummary
                         expandIcon={<ArrowDropDownIcon />}
 
@@ -332,13 +351,13 @@ const Content = () => {
                     </AccordionDetails>
                 </Accordion>
 
-            <Accordion>
+            <Accordion expanded={accordion.faq1} onChange={()=>accordionAction('faq1')}>
                 <AccordionSummary expandIcon={<ArrowDropDownIcon />}><Typography>What happens if I ignore a prompt?</Typography></AccordionSummary>
                 <AccordionDetails><Typography>If you press Ignore, the suggestion won’t be tracked, and you’ll see a private confirmation. In some workspaces, ignored items may also appear in a “past commitments” channel for reference. CommitBot only continues to track items that you choose to formalize.</Typography></AccordionDetails>
             </Accordion>
     
 
-            <Accordion>
+            <Accordion expanded={accordion.faq2} onChange={()=>accordionAction('faq2')}>
                 <AccordionSummary expandIcon={<ArrowDropDownIcon />}><Typography>Can someone else complete a task for me?</Typography></AccordionSummary>
                 <AccordionDetails><Typography>Yes. Both you (the committer) and the issuer can mark a task as complete. Usually, the committer marks it as “done,” but the issuer can also formalize completion if needed. Once a task is marked complete, only the issuer can approve the badge.</Typography></AccordionDetails>
             </Accordion>
@@ -346,29 +365,29 @@ const Content = () => {
 
 
     
-            <Accordion>
+            <Accordion expanded={accordion.faq3} onChange={()=>accordionAction('faq3')}>
                 <AccordionSummary expandIcon={<ArrowDropDownIcon />}><Typography>Where do I see my commitments?</Typography></AccordionSummary>
                 <AccordionDetails><Typography>Type /commitments in the CommitBot app or go to #commitbot-current-commitments to view your active commitments.</Typography></AccordionDetails>
             </Accordion>
 
         
 
-            <Accordion>
+            <Accordion expanded={accordion.faq4} onChange={()=>accordionAction('faq4')}>
                 <AccordionSummary expandIcon={<ArrowDropDownIcon />}><Typography>Can I request a badge for a commitment that I made in Slack using SMS or WhatsApp?</Typography></AccordionSummary>
                 <AccordionDetails><Typography>Technically yes, but it is not advisable since the commitment will still appear in your active commitments list in Slack. It will, however, be updated correctly in the ReliablyME platform. For the best experience, we recommend completing and requesting badges in Slack if the commitment was created there with CommitBot. This synchronization between Slack and the ReliablyME platform will be improved in subsequent versions of the CommitBot.</Typography></AccordionDetails>
             </Accordion>
 
     
              
-             <Accordion>
+             <Accordion expanded={accordion.faq5} onChange={()=>accordionAction('faq5')}>
                 <AccordionSummary expandIcon={<ArrowDropDownIcon />}><Typography>I said “finished” in #random and nothing happened. Why?</Typography></AccordionSummary>
                 <AccordionDetails><Typography>That probably happened because you didn’t say “done” in the same thread as the original commitment. Saying it randomly in another channel won’t trigger anything. </Typography></AccordionDetails>
-            </Accordion>
-              <Accordion>
+            </Accordion >
+              <Accordion expanded={accordion.faq6} onChange={()=>accordionAction('faq6')}>
                 <AccordionSummary expandIcon={<ArrowDropDownIcon />}><Typography>Can I decline a badge?</Typography></AccordionSummary>
                 <AccordionDetails><Typography>Yes. Use the Decline button when prompted. The promising party will be notified.</Typography></AccordionDetails>
             </Accordion>
-            <Accordion>
+            <Accordion expanded={accordion.faq7} onChange={()=>accordionAction('faq7')}>
                 <AccordionSummary expandIcon={<ArrowDropDownIcon />}><Typography>How do SMS alerts work?</Typography></AccordionSummary>
                 <AccordionDetails><Typography>If you’ve logged in to ReliablyME outside of Slack, you’ll receive SMS or WhatsApp reminders as a backup. To get these reminders, you must verify your phone number.</Typography></AccordionDetails>
             </Accordion>
@@ -395,7 +414,14 @@ const Content = () => {
 
         🔗 Explore more at https://reliably.me</div>
         </div>
+
+        < div id='gpt' className='content_gpt'>
+        <div className='content_title'>More Questions?</div>
+        <div className="content_content">If you are unsure about aything or need more detailed explanations, feel free to check <a href="https://chatgpt.com/g/g-68c34978bd188191954ec0bdf4d74850-reliablyme-commitbot-guide">here</a>!</div>
+        </div>
     </div>
+
+    
   )
 }
 

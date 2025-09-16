@@ -20,7 +20,8 @@ const Left_nav = () => {
         {name:'What Works Well',id:'work',className:'leftNav_work'},
             {name:'Known Limitations',id:'limitation',className:'leftNav_limitation'},
         {name:'Frequently Asked Questions (FAQ)',id:'faq',className:'leftNav_faq'},
-            {name:'The Broader ReliablyME Platform',id:'borader',className:'leftNav_borader'}
+            {name:'The Broader ReliablyME Platform',id:'borader',className:'leftNav_borader'},
+              {name:'More Questions?',id:'gpt',className:'leftNav_gpt'}
     ]
   return (
     <div className='leftNav'>

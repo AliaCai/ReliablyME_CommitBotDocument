@@ -2,26 +2,53 @@
     position:sticky;
     top:0;
     height:5vh;
-    width: 100vw;
-    padding:1vh;
+    width: 96vw;
+    padding:1vh 2vw;
     background-color: rgb(238, 235, 235);
     display: flex;
+    justify-content: space-between;
 
 }
 .navBar_logo{
     height:100%;
-
-
 }
 .navBar_logoImg{
     height: 100%;
-
-
     object-fit: contain;
 
 }
 
+
+.gpt_logo{
+    height:100%;
+
+}
+.gpt_logoImg{
+    height: 70%;
+    padding:15%;
+    background-color: white;
+    border-radius: 50%;
+    object-fit: contain;
+
+}
+
+
+.gpt_logoImg:hover{
+    box-shadow: 0 0 0.5em white;
+    animation-name: spin;
+    animation-duration: 2s;
+}
+
 .leftNav a{
     text-decoration: none;
-      color: inherit;
+    color: inherit;
+}
+
+@keyframes spin{
+    from{
+        transform:rotate(0deg)
+    }
+    to{
+        transform:rotate(360deg)
+    }
 }
