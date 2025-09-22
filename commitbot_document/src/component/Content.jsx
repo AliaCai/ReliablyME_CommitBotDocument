@@ -45,8 +45,8 @@ import sec7_img1 from "../asset/sec7_img1.png"
 import sec8_img1 from "../asset/sec8_img1.png"
 import sec8_img2 from "../asset/sec8_img2.png"
 const Content = () => {
-    const [expand, setExpand]=useState(true);
-    const [accordion, setAccordion]=useState({ faq0:true,faq1:true, faq2:true, faq3:true, faq4:true, faq5:true, faq6:true, faq7:true})
+    const [expand, setExpand]=useState(false);
+    const [accordion, setAccordion]=useState({ faq0:false,faq1:false, faq2:false, faq3:false, faq4:false, faq5:false, faq6:false, faq7:false})
     const handelClick=()=>{
         setExpand(!expand)
         if (!expand){
@@ -332,7 +332,7 @@ const Content = () => {
             </div>
         </div > 
         < div id='faq' className='content_faq'>
-            <div className='content_title'>Frequently Asked Questions (FAQ) <FormControlLabel control={<Switch checked={expand} onChange={handelClick} defaultChecked />} className='content_faq_display' label="Expand" />
+            <div className='content_title'>Frequently Asked Questions (FAQ) <FormControlLabel control={<Switch checked={expand} onChange={handelClick} defaultChecked />} className='content_faq_display' label="Expand All" />
 </div>
 
             <div className="content_content">
