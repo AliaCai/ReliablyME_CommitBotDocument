@@ -24,6 +24,8 @@ import sec1_img3 from "../asset/sec1_img3.png"
 import sec1_img4 from "../asset/sec1_img4.png"
 import sec2_img1 from "../asset/sec2_img1.png"
 import sec3_img1 from "../asset/sec3_img1.png"
+import sec3_img1_1 from "../asset/sec3_img1_1.png"
+import sec3_img1_2 from "../asset/sec3_img1_2.png"
 import sec3_img2 from "../asset/sec3_img2.png"
 
 import sec4_img1 from "../asset/sec4_img1.png"
@@ -72,17 +74,17 @@ const Content = () => {
 
         <div id='intro' className='content_intro'>
             <div className='content_title'>What is CommitBot?</div>
-            <div className="content_content"><span className='heavy'>CommitBot</span> is a tool within Slack that helps you keep track of your promises, such as tasks you have committed to completing. It is part of a larger system called <span className='heavy'></span>ReliablyME, which is designed to help teams stay accountable and build trust.
+            <div className="content_content"><span className='heavy'>CommitBot</span> is a tool within Slack that helps you <span className="highlight">keep track of your promises</span>, such as tasks you have committed to completing. It is part of a larger system called <span className='heavy'>ReliablyME</span>, which is designed to help teams stay accountable and build trust.
 
             <br/><br/>
-            When you send a message in Slack like <span className='heavy'>“I’ll send the report by Friday,”</span> CommitBot can recognize that you made a commitment. It will then give you the option to track it, so you don’t forget, and your team stays informed.
+            When you send a message in Slack like <span className='heavy'>“I’ll send the report by Friday,”</span> CommitBot can <span className="highlight">recognize</span> that you made a commitment. It will then give you the option to track it, so you don’t forget, and your team stays informed.
             <br/> <br/>
             CommitBot operates entirely within Slack, making it easy to stay organized <span className='heavy'>without</span> leaving the app. The full ReliablyME platform also includes a website and mobile app where you can review your commitments, track your progress, and view your trust score over time.
             
             <br/><br/>
-            <span className="highlight">Note:The word “invitation” in some screenshots is an old expression, hence you can view it as "request now."</span> <br/><br/>
-            <span className="highlight">Note: Formalizing completion shortcut only working on auto-recognized commitments. We are still working on upgrade."</span><br/><br/>
-            <span className="highlight">Note: the function of creating a request to multiple people is still on the processing of building."</span><br/><br/>
+            <span className="highlight">Note: In some screenshots, the word “invitation” appears. This is an outdated term and should be understood as "request" now.</span> <br/><br/>
+            <span className="highlight">Note: The completion shortcut currently works only for auto-recognized commitments. An upgrade to expand support is in progress.</span><br/><br/>
+            <span className="highlight">Note: The ability to send a request to multiple people is still under development.</span><br/><br/>
 
             </div>
         </div>
@@ -90,9 +92,10 @@ const Content = () => {
             <div className='content_title'>Installation & Configuration</div>
             <div className="content_content">
             <span className="highlight">Note: Admin access is required to install and configure CommitBot in your workspace.</span>
-            <br/><br/>1. 
-            <span className='heavy'>To install CommitBot:</span>
-             Go to https://slack.reliably.me/slack/install
+            <br/><br/>
+            <span className='heavy'> To install CommitBot:</span>
+            <br/><br/>
+             1. Go to <a href="https://slack.reliably.me/slack/install">https://slack.reliably.me/slack/install</a> 
             <img src={sec1_img1} alt="instruction1" />
              <br/> <br/>
             2. Authorize the bot via Slack’s OAuth flow.
@@ -105,12 +108,12 @@ const Content = () => {
             <li className='cotent_item'>Click on the <span className='heavy'>ReliablyME CommitBot</span> at the top in Slack.</li>
             <img src={sec1_img3} alt="ReliablyME CommitBot" />
 
-            <li className='cotent_item'>Click Add this app to a channel.</li>
+            <li className='cotent_item'>Click <span className='heavy'>Add this app to a channel</span>.</li>
             <img src={sec1_img4} alt="add this app" />
 
             <li className='cotent_item'>Choose the public channels where CommitBot should listen.</li>
             </ul>
-            <span className='highlight'>You can configure CommitBot to monitor any public and private channel. To configure CommitBot to monitor a private channel, simply invite it into a group chat with other users in Slack.</span></div>
+            <span className='highlight'>You can configure CommitBot to monitor <span className='heavy'>any public and private channel</span>. To configure CommitBot to monitor a private channel, simply invite it into a group chat with other users in Slack.</span></div>
         </div >
         < div name='Overview of CommitBot' id='overview' className='content_overview'>
             <div className='content_title'>Overview of CommitBot</div>
@@ -134,41 +137,45 @@ const Content = () => {
             <div className="content_content">
             <ul className='cotent_list_plain'>
             <li>To get started, if you haven’t registered with the ReliablyME platform yet, type “/register” in Slack and press Enter.
-            <img src={sec3_img1} alt=" type “/register”" />
+            <img src={sec3_img1_1} alt=" type “/register”" />
             </li>
             <li>After that, you'll be prompted to complete your registration via WhatsApp or SMS by providing your name and some basic information.</li>
+            <img src={sec3_img1_2} alt=" type “/register”" />
+
             <li>Once you’ve completed registration, return to Slack and type “/login”. A pop-up will appear prompting you to enter your first and last name, along with your phone number.</li>
+            <img src={sec3_img2} alt="private prompts" />
             <li>You’ll see a prompt that says “Enter OTP”. This simply means a one-time verification code will be sent to your phone. Enter that code to confirm your identity, and once verified, you’ll be successfully logged into CommitBot!</li>
             </ul>
             🔐<span className='highlight'>All CommitBot prompts are private unless formalized.</span> 
             <br /> <br />
-            <img src={sec3_img2} alt="private prompts" />
 
             </div>
         </div > 
         < div id='commitments' className='content_commitments'>
             <div className='content_title'>Working with Commitments</div>
-
             <div className="content_content">
+            <br />
             <span className='heavy'>Automatic Workflow (Primary Use Case):</span>
             <ol className="cotent_list_plain">
-                <li>A user types a natural commitment in Slack (e.g., “I will complete this project by tomorrow”).CommitBot displays a private prompt (only to that user): “Do you want to formalize this?”</li>
+                <li>A user types a natural commitment in Slack (e.g., “I will complete this project by tomorrow”).<br />CommitBot displays a <span className='heavy'>private prompt</span> (only to that user): “Do you want to formalize this?”</li>
                 <img src={sec4_img1} alt="private prompt" />
-                <li>User clicks Formalize Offer, fills out the form, and submits.</li>
-                <li>The commitment will now appear in /commitments, so you can easily keep track of what you’ve promised to do.</li>
+                <li>User clicks  <span className='heavy'>Formalize Offer</span>, fills out the form, and submits.</li>
+                <img src={sec4_img2} alt="two types of commitments" />
+
+                <li>The commitment will now appear in <span className='heavy'>/commitments</span>, so you can easily keep track of what you’ve promised to do.</li>
             </ol>
          
              <span className='heavy'>Manual Workflow:</span>
-            Use the slash command /create to enter a commitment manually, which will have two types of commitments:
-            <img src={sec4_img2} alt="two types of commitments" />
+            Use the slash command <span className='heavy'>/create</span> to enter a commitment manually, which will have two types of commitments:
 
              <ul className="cotent_list_plain">
-                <li> <span className='heavy'>Create Offer</span>  – Use this when you want to make a promise to someone else. You’ll describe what you’re committing to and set a due date.</li>
-                <li> <span className='heavy'>Create Request</span>  – Use this when you want to request someone else to make a commitment to you. You’ll describe what you're asking them to commit to and send the request for their approval.</li>
+                <li> <span className='heavy'>Create Offer</span>  – Use this when you want to <span className='highlight'>make a promise to someone else</span>. You’ll describe what you’re committing to and set a due date.</li>
+                <li> <span className='heavy'>Create Request</span>  – Use this when you want to request <span className='highlight'>someone else to make a commitment to you</span>. You’ll describe what you're asking them to commit to and send the request for their approval.</li>
              </ul>
             <img src={sec4_img3} alt="create commitments" />
 
-            <span className='heavy'></span>Create Offer:
+            <span className='heavy'>Create Offer:</span>
+            <br /><br />
             Use this form when you want to offer a commitment to someone. You'll fill out the following fields:
 
             <ul className="cotent_list_plain">
@@ -181,8 +188,9 @@ const Content = () => {
             Once submitted, the recipient will receive your offer and can accept or decline it.
             <img src={sec4_img4} alt="create new offer" />
 
-            <span className='heavy'></span>Create Request:
-            Use this form when you want to request someone else to make a commitment to you. This is ideal for delegating or requesting a specific action from someone.
+            <span className='heavy'>Create Request:</span>
+                    <br /><br />
+            Use this form when you want to request <span className='heavy'>someone else to make a commitment to you</span>. This is ideal for delegating or requesting a specific action from someone.
 
             <ul className="cotent_list_plain">
                 <li><span className='heavy'>Describe what you're requesting someone to do</span> – Write what you are asking the other person to commit to.</li>
@@ -193,13 +201,19 @@ const Content = () => {
             <img src={sec4_img5} alt="create new invitations" />
 
             After you submit the form, the recipient will receive a request and can choose to accept or decline.
+            <br />
+             <br />
 
-            Tip: You can also use message shortcuts by clicking the three dots at the side to formalize offers and requests from a message sent in the chat.
+            <span className='highlight'>
+                            <span className='heavy'>Tip:</span> You can also use message shortcuts by clicking the three dots at the side to formalize offers and requests from a message sent in the chat.
+
+            </span>
             </div>
         </div > 
         < div  id='action' className='content_action'>
             <div className='content_title'>Accepting, Declining & Clarifying</div>
             <div className="content_content">When you receive a <span className='heavy'>request</span> or <span className='heavy'>offer</span> from CommitBot, you will see a private message or prompt with action buttons. These allow you to respond directly without leaving Slack.
+            <br /> <br />
                     <span className='heavy'>For requests and offers:</span>
                     <ul className="cotent_list_plain">
                         <li><span className='heavy'>Accept </span>– Confirms you agree to take on the commitment, adding it to your active commitments in <span className='heavy'>/commitments</span>.</li>
@@ -208,6 +222,7 @@ const Content = () => {
                     </ul>
                     <img src={sec5_img1} alt="a new pending invitation" />
                     <span className='heavy'>What issuers see:</span>
+            <br /> <br />
 
                     Issuers get a confirmation message for each action taken, including any clarification requests.
                     <img src={sec5_img2} alt="somepne accepts invitation" />
@@ -267,14 +282,14 @@ const Content = () => {
         </div > 
         < div  id='data' className='content_data'>
             <div className='content_title'>Managing Your Profile & Data</div>
-            <div className="content_content">To change your display name, type /login in CommitBot and click “update profile”.</div>
+            <div className="content_content">To change your display name, type <span className='heavy'>/login</span> in CommitBot and click “update profile”.</div>
             <img src={sec8_img1} alt="type /login msg" />
             <img src={sec8_img2} alt="update profile-" />
 
         </div>
         </div > 
         < div  id='commands' className='content_commands'>
-            <div className='content_title'>Commands</div>
+            <div className='content_title'>Slash Commands (Optional Tools)</div>
             <div className="content_conten">
                 <div className="content_commands_table">
                 <TableContainer component={Paper}>
@@ -346,7 +361,7 @@ const Content = () => {
                     </AccordionSummary>
                     <AccordionDetails>
                     <Typography>
-                        No. It only listens in configured channels and only detects messages that match commitment patterns..
+                        No. It only listens in configured channels and only detects messages that match commitment patterns.
                     </Typography>
                     </AccordionDetails>
                 </Accordion>
@@ -391,34 +406,37 @@ const Content = () => {
                 <AccordionSummary expandIcon={<ArrowDropDownIcon />}><Typography>How do SMS alerts work?</Typography></AccordionSummary>
                 <AccordionDetails><Typography>If you’ve logged in to ReliablyME outside of Slack, you’ll receive SMS or WhatsApp reminders as a backup. To get these reminders, you must verify your phone number.</Typography></AccordionDetails>
             </Accordion>
-
+            <br/>
+            If you’re unsure about anything or would like more details, please check <a href="https://chatgpt.com/g/g-68c34978bd188191954ec0bdf4d74850-reliablyme-commitbot-guide">here</a>!
  </div>
         </div > 
         < div id='borader' className='content_borader'>
             <div className='content_title'>The Broader ReliablyME Platform</div>
             <div className="content_content">
-        CommitBot is the Slack-based interface of the full ReliablyME platform, which supports:
+        CommitBot is the <span className='heavy'>Slack-based interface</span> of the full <span className='heavy'>ReliablyME platform</span>, which supports:
         <br /><br />
        
         🌐 <span className="heavy">Web/Mobile dashboard:</span> 
+        <br />
         Track personal or team-wide reliability metrics.
         <br /><br />
         📊 <span className="heavy">Badging System:</span>
+                <br />
         Design, assign, and analyze custom digital badges.
         <br /><br />
         📱 <span className="heavy">Cross-platform nudging:</span>
+                <br />
         Via SMS or WhatsApp using Twilio integration.
         <br /><br />
         📂 <span className="heavy">Portfolio & credentials:</span>
+                <br />
         Build a shareable record of fulfilled commitments and social proof.
 
-        🔗 Explore more at https://reliably.me</div>
+        <br/><br />
+        🔗 Explore more at <a href="https://reliably.me">https://reliably.me</a></div>
         </div>
 
-        < div id='gpt' className='content_gpt'>
-        <div className='content_title'>More Questions?</div>
-        <div className="content_content">If you are unsure about aything or need more detailed explanations, feel free to check <a href="https://chatgpt.com/g/g-68c34978bd188191954ec0bdf4d74850-reliablyme-commitbot-guide">here</a>!</div>
-        </div>
+
     </div>
 
     

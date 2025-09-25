@@ -5,6 +5,10 @@ import '../style/Left_nav.css'
 const Left_nav = () => {
     const [active, setActive]=useState('leftNav_intro')
 
+    function handelClick(){
+
+    }
+
     const items=[
         {name:'What is CommitBot',id:'intro',className:'leftNav_intro'},
         {name:'Installation & Configuration',id:'setup',className:'leftNav_setup'},
@@ -20,9 +24,7 @@ const Left_nav = () => {
         {name:'What Works Well',id:'work',className:'leftNav_work'},
             {name:'Known Limitations',id:'limitation',className:'leftNav_limitation'},
         {name:'Frequently Asked Questions (FAQ)',id:'faq',className:'leftNav_faq'},
-            {name:'The Broader ReliablyME Platform',id:'borader',className:'leftNav_borader'},
-              {name:'More Questions?',id:'gpt',className:'leftNav_gpt'}
-    ]
+            {name:'The Broader ReliablyME Platform',id:'borader',className:'leftNav_borader'},    ]
   return (
     <div className='leftNav'>
         {items.map((e)=><HashLink to={`#${e.id}`} ><div onClick={()=>setActive(e.className)} className={`${e.className} ${active==e.className?'color':''}`}>{e.name}</div></HashLink>)}
